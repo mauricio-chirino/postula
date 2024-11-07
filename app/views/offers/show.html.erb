@@ -1,0 +1,7 @@
+<h1><%= @offer.title %></h1>
+<p><%= @offer.description %></p>
+
+
+<%= link_to 'Editar', edit_offer_path(@offer), class: 'btn btn-primary' %>
+<%= link_to 'Borrar', offer_path(@offer), method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar esta oferta?' }, class: 'btn btn-danger' %>
+<%= link_to 'Volver', offers_path, class: 'btn btn-secondary' %>

@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ body{
+    background:#f3c538;
+}
+.forget-pwd > a{
+    color: #dc3545;
+    font-weight: 500;
+}
+.forget-password .panel-default{
+    padding: 31%;
+    margin-top: -27%;
+}
+.forget-password .panel-body{
+    padding: 15%;
+    margin-bottom: -50%;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img{
+    width:40%;
+    margin-bottom:10%;
+}
+.btnForget{
+    background: #c0392b;
+    border:none;
+}
+.forget-password .dropdown{
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+.forget-password .dropdown button{
+    width: 100%;
+}
+.forget-password .dropdown ul{
+    width: 100%;
+}

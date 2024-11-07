@@ -1,0 +1,46 @@
+<h4>Ofertas de Trabajo</h4>
+
+<% i = 1 %>
+<% if Offer.count != 0 %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Trabajo</th>
+        <th scope="col">Descripcion</th>
+        <% if current_user&.is_admin %>
+          <th scope="col">Postulantes</th>  
+        <% else %>
+          <th scope="col">Postula</th>  
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+    
+    <% @offers.each do |offer| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= offer.title %></td>
+        <td><%= offer.description %></td>
+        <% if current_user&.is_admin %>
+          <td><%= offer.requests.select(:user_id).distinct.count %></td>
+        <% else %>
+          <td>
+          <% if user_signed_in? %>
+            <%= button_to "Postular", postular_offer_path(offer), method: :post, class: "btn btn-primary btn-sm " %>
+          <% else %>
+            <%= link_to "Postular", new_user_session_path, class: "btn btn-primary btn-sm ", data: { turbo: false } %>
+          <% end %>
+        <% end %>
+      </tr>
+      <% i += 1
+      
+      #first_admin = User.find_by.(is_admin: true).count
+      
+       %>
+  <% end %>
+    </tbody>
+  </table>
+<% else %> 
+  <h1>no hay ofertas de Trabajo</h1>
+<%end%>

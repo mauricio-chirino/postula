@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: requests
+#
+#  id         :bigint           not null, primary key
+#  user_id    :bigint           not null
+#  offer_id   :bigint           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  user: one
+  offer: one
+
+two:
+  user: two
+  offer: two
